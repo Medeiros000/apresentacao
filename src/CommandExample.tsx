@@ -5,9 +5,9 @@ import {
   Tv,
   Terminal,
   RotateCcw,
-  RotateCw,
-  Code
+  RotateCw
 } from 'lucide-react';
+import { CodeSnippetViewer } from './CodeSnippetViewer';
 
 // ==========================================
 // 1. RECEIVER DEVICES & INTERFACE COMMAND
@@ -267,15 +267,10 @@ export default function CommandExample() {
 
       {/* Code & Explanation */}
       <div className="lg:col-span-5 space-y-4">
-        <div className="bg-slate-900 text-slate-100 rounded-2xl p-5 shadow-xl border border-slate-800 font-mono text-xs overflow-hidden">
-          <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-800 text-slate-400">
-            <span className="flex items-center gap-2 text-amber-400 font-semibold">
-              <Code size={14} /> CommandPattern.ts
-            </span>
-            <span>Design Pattern</span>
-          </div>
-          <pre className="overflow-x-auto text-slate-300 leading-relaxed">
-{`interface Command {
+        <CodeSnippetViewer
+          fileName="CommandPattern.ts"
+          tag="Design Pattern"
+          code={`interface Command {
   execute(): void;
   undo(): void;
 }
@@ -306,8 +301,7 @@ class RemoteControl {
     cmd?.undo();
   }
 }`}
-          </pre>
-        </div>
+        />
 
         <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5">
           <h4 className="font-bold text-amber-900 mb-2 text-sm">O que é o Command Pattern?</h4>

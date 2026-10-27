@@ -9,9 +9,9 @@ import {
   CheckCircle2,
   XCircle,
   AlertTriangle,
-  RefreshCw,
-  Code
+  RefreshCw
 } from 'lucide-react';
+import { CodeSnippetViewer } from './CodeSnippetViewer';
 
 // ==========================================
 // 1. ESTRUTURA DO CHAIN OF RESPONSIBILITY
@@ -320,15 +320,10 @@ export default function ChainOfResponsibilityExample() {
 
       {/* Code & Explanation */}
       <div className="lg:col-span-5 space-y-4">
-        <div className="bg-slate-900 text-slate-100 rounded-2xl p-5 shadow-xl border border-slate-800 font-mono text-xs overflow-hidden">
-          <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-800 text-slate-400">
-            <span className="flex items-center gap-2 text-violet-400 font-semibold">
-              <Code size={14} /> ChainOfResponsibility.ts
-            </span>
-            <span>Design Pattern</span>
-          </div>
-          <pre className="overflow-x-auto text-slate-300 leading-relaxed">
-{`abstract class Handler {
+        <CodeSnippetViewer
+          fileName="ChainOfResponsibility.ts"
+          tag="Design Pattern"
+          code={`abstract class Handler {
   private next?: Handler;
 
   public setNext(h: Handler): Handler {
@@ -352,8 +347,7 @@ class StockHandler extends Handler {
 // Encadeamento flexível:
 stock.setNext(card).setNext(fraud);
 stock.handle(order);`}
-          </pre>
-        </div>
+        />
 
         <div className="bg-violet-50 border border-violet-100 rounded-2xl p-5">
           <h4 className="font-bold text-violet-900 mb-2 text-sm">O que é Chain of Responsibility?</h4>

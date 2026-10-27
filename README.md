@@ -1,75 +1,61 @@
-# React + TypeScript + Vite
+# Design Patterns & Princípios POO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Apresentação interativa com exemplos em TypeScript e React sobre encapsulamento, segregação de interfaces, Chain of Responsibility e Command Pattern.
 
-Currently, two official plugins are available:
+## Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 20 ou superior
+- npm 10 ou superior
+- Docker, caso prefira executar em container
 
-## React Compiler
+## Executar localmente
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Instale as dependências:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Inicie o servidor de desenvolvimento:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev
 ```
+
+Abra o endereço exibido pelo Vite, normalmente `http://localhost:5173`.
+
+## Scripts disponíveis
+
+```bash
+npm run dev       # Inicia o servidor com hot reload
+npm run build     # Verifica os tipos e gera a versão de produção
+npm run lint      # Executa o ESLint
+npm run preview   # Serve localmente a build de produção
+```
+
+## Executar com Docker
+
+Construa a imagem:
+
+```bash
+docker build -t apresentacao-poo .
+```
+
+Inicie o container:
+
+```bash
+docker run --rm -p 8080:80 apresentacao-poo
+```
+
+Acesse `http://localhost:8080`.
+
+## Estrutura principal
+
+- `src/App.tsx`: navegação entre os exemplos
+- `src/*Example.tsx`: demonstrações interativas dos padrões e princípios
+- `src/examples/`: snippets de código usados na apresentação
+- `public/`: arquivos estáticos públicos
+
+## Desenvolvido por
+
+- Desenvolvedor Full Cycle - [jrmedeiros.dev](https://github.com/Medeiros000)

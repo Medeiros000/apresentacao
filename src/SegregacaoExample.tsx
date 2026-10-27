@@ -3,9 +3,9 @@ import {
   UserCheck,
   Building2,
   CheckCircle2,
-  FileText,
-  Code
+  FileText
 } from 'lucide-react';
+import { CodeSnippetViewer } from './CodeSnippetViewer';
 
 // ==========================================
 // 1. CONTRATOS E INTERFACES SEGREGADAS (ISP)
@@ -43,7 +43,7 @@ export default function SegregacaoExample() {
 
   // Modelos conceituais aderentes ao ISP:
   const cltEmployee = {
-    nome: 'Carlos Eduardo',
+    nome: 'Antonio José',
     tipo: 'CLT',
     salario: baseSalary,
     getSalarioBase: () => baseSalary,
@@ -222,15 +222,10 @@ export default function SegregacaoExample() {
 
       {/* Code comparison section */}
       <div className="lg:col-span-5 space-y-4">
-        <div className="bg-slate-900 text-slate-100 rounded-2xl p-5 shadow-xl border border-slate-800 font-mono text-xs overflow-hidden">
-          <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-800 text-slate-400">
-            <span className="flex items-center gap-2 text-indigo-400 font-semibold">
-              <Code size={14} /> InterfacesSegregadas.ts
-            </span>
-            <span>ISP Principle</span>
-          </div>
-          <pre className="overflow-x-auto text-slate-300 leading-relaxed">
-{`// Interfaces pequenas e bem definidas
+        <CodeSnippetViewer
+          fileName="InterfacesSegregadas.ts"
+          tag="ISP Principle"
+          code={`// Interfaces pequenas e bem definidas
 interface IRemuneravel {
   getRemuneracao(): number;
 }
@@ -258,8 +253,7 @@ class ContratadoPJ implements
   getRemuneracao() { return 8000; }
   gerarNotaFiscal() { /* ... */ }
 }`}
-          </pre>
-        </div>
+        />
 
         <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5">
           <h4 className="font-bold text-slate-800 mb-2 text-sm">O que é Segregação de Interfaces (ISP)?</h4>

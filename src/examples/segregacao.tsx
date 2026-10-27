@@ -15,7 +15,7 @@ class EmpregadoCLT implements IEmpregado {
     }
 
     public getBeneficios(): number {
-        return this.salario * 0.2; // Exemplo de cálculo de benefícios
+        return this.salario * 0.2;
     }
 }
 
