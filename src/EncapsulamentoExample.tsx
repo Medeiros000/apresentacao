@@ -158,7 +158,7 @@ export default function EncapsulamentoExample() {
 
           {/* Form Actions */}
           <div className="space-y-4">
-            <div className="flex gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row">
               <input
                 type="number"
                 placeholder="Informe o valor (R$)"
@@ -169,14 +169,14 @@ export default function EncapsulamentoExample() {
               <button
                 type="button"
                 onClick={handleDeposit}
-                className="bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-emerald-900/20 active:scale-95 text-sm cursor-pointer"
+                className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-emerald-900/20 active:scale-95 text-sm cursor-pointer sm:w-auto"
               >
                 Depositar
               </button>
               <button
                 type="button"
                 onClick={handleWithdraw}
-                className="bg-rose-600 hover:bg-rose-500 text-white font-medium px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-rose-900/20 active:scale-95 text-sm cursor-pointer"
+                className="w-full bg-rose-600 hover:bg-rose-500 text-white font-medium px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-rose-900/20 active:scale-95 text-sm cursor-pointer sm:w-auto"
               >
                 Sacar
               </button>
