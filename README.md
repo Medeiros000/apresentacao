@@ -49,6 +49,22 @@ docker run --rm -p 8080:80 apresentacao-poo
 
 Acesse `http://localhost:8080`.
 
+## Executar com Docker Compose
+
+Construa a imagem e inicie o serviço:
+
+```bash
+docker compose up --build
+```
+
+Acesse `http://localhost:8080`. Para executar em segundo plano, use `docker compose up --build -d`.
+
+Para parar e remover o container:
+
+```bash
+docker compose down
+```
+
 ## Estrutura principal
 
 - `src/App.tsx`: navegação entre os exemplos
